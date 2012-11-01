@@ -1,4 +1,4 @@
-package first
+package detect
 
 import "testing"
 
