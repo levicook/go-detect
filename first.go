@@ -2,7 +2,19 @@ package detect
 
 import "time"
 
-const zeroString = ""
+var (
+	zeroFloat64 float64
+	zeroString  string
+)
+
+func Float64(floats ...float64) float64 {
+	for _, f := range floats {
+		if f != zeroFloat64 {
+			return f
+		}
+	}
+	return zeroFloat64
+}
 
 func String(strings ...string) string {
 	for _, s := range strings {
