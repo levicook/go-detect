@@ -1,5 +1,7 @@
 package detect
 
+import "time"
+
 const zeroString = ""
 
 func String(strings ...string) string {
@@ -9,4 +11,13 @@ func String(strings ...string) string {
 		}
 	}
 	return zeroString
+}
+
+func Time(times ...time.Time) time.Time {
+	for _, t := range times {
+		if !t.IsZero() {
+			return t
+		}
+	}
+	return time.Time{}
 }
